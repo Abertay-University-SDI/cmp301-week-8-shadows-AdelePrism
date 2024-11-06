@@ -29,11 +29,13 @@ private:
 	PlaneMesh* mesh;
 
 	Light* light;
+	Light* light2;
 	AModel* model;
 	ShadowShader* shadowShader;
 	DepthShader* depthShader;
 
 	ShadowMap* shadowMap;
+	ShadowMap* shadowMap2;
 };
 
 #endif

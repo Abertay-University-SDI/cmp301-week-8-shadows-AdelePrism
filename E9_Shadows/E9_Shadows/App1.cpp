@@ -36,8 +36,20 @@ void App1::init(HINSTANCE hinstance, HWND hwnd, int screenWidth, int screenHeigh
 	light->setAmbientColour(0.3f, 0.3f, 0.3f, 1.0f);
 	light->setDiffuseColour(1.0f, 1.0f, 1.0f, 1.0f);
 	light->setDirection(0.0f, -0.7f, 0.7f);
-	light->setPosition(0.f, 0.f, -10.f);
+	light->setPosition(-10.f, 0.f, -10.f);
 	light->generateOrthoMatrix((float)sceneWidth, (float)sceneHeight, 0.1f, 100.f);
+
+	// This is my shadow map
+	shadowMap2 = new ShadowMap(renderer->getDevice(), shadowmapWidth, shadowmapHeight);
+
+	// Configure my directional light
+	light2 = new Light();
+	light2->setAmbientColour(0.0f, 0.0f, 0.0f, 1.0f);
+	light2->setDiffuseColour(1.0f, 0.0f, 1.0f, 1.0f);
+	light2->setDirection(0.0f, -0.7f, -0.7f);
+	light2->setPosition(10.f, 0.f, -10.f);
+	light2->generateOrthoMatrix((float)sceneWidth, (float)sceneHeight, 0.1f, 100.f);
+
 
 }
 
